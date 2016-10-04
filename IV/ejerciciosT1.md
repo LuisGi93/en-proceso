@@ -97,8 +97,14 @@ Me [descargo](http://www.pgbovine.net/cde/manual/) desde la web y ejecuto la ord
 
 ## Ejercicio nº4
 
+Resultado de ejecutar
+```
+egrep '^flags.*(vmx|svm)' /proc/cpuinfo
+```
+
+
 
  
-## Ejercicio nº1.
+
 
 
