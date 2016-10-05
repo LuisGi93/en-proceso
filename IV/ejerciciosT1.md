@@ -96,7 +96,7 @@ Me [descargo](http://www.pgbovine.net/cde/manual/) desde la web y ejecuto la ord
 ![img](https://i.sli.mg/Ud3coU.png)
 
 
-Al ejecutarlo en otra distribución me da fallo al leer el argumento en la distribución original ARGV[0] según ruby es Wild Tales en la otra distribución Fedora ARGV[0] es ./twitter.rb Wild Tales siendo el mismo código.
+Al ejecutarlo en otra distribución me da fallo al leer los argumentos de la linea de comandos en la distribución original el vector ARGV según ruby es Wild Tales en la otra distribución Fedora ARGV es ./twitter.rb Wild Tales siendo el mismo código.
 
 ![img](https://i.sli.mg/gnIlqa.png)
 ## Ejercicio nº4
