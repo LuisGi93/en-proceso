@@ -107,11 +107,12 @@ egrep '^flags.*(vmx|svm)' /proc/cpuinfo
 ```
 
 
-Me sale vacio.
+![img](https://i.sli.mg/RrYI47.png)
 
 ## Ejercicio nº5
  
-La salida de kvm-ok también.
+1. La salida de kvm-ok me dice que el comando no existe.
 
+2. De hypervisor dispongo de xen y de virtualbox:
 
-
+![img](https://i.sli.mg/YtjXKC.png)
