@@ -95,6 +95,10 @@ Me [descargo](http://www.pgbovine.net/cde/manual/) desde la web y ejecuto la ord
 
 ![img](https://i.sli.mg/Ud3coU.png)
 
+
+Al ejecutarlo en otra distribución me da fallo al leer el argumento en la distribución original ARGV[0] según ruby es Wild Tales en la otra distribución Fedora ARGV[0] es ./twitter.rb Wild Tales siendo el mismo código.
+
+![img](https://i.sli.mg/gnIlqa.png)
 ## Ejercicio nº4
 
 Resultado de ejecutar
@@ -103,8 +107,11 @@ egrep '^flags.*(vmx|svm)' /proc/cpuinfo
 ```
 
 
+Me sale vacio.
 
+## Ejercicio nº5
  
+La salida de kvm-ok también.
 
 
 
