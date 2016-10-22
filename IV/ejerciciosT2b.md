@@ -5,12 +5,12 @@
 
 Vamos a instalar el entorno virtual de desarrollo para ello seguimos seguimos los pasos descritos en la [web de virtualenv](https:/virtualenv.pypa.io/en/latest/installation/):
 
-	1º. Instalamos virtualenv, para ello primero instalamos pip y después virtualenv:
+  1º. Instalamos virtualenv, para ello primero instalamos pip y después virtualenv:
 
 
 ![img](https://i.sli.mg/UuKx8j.png)
 
-	2º. Creamos el entorno virtual y lo "activamos" :
+  2º. Creamos el entorno virtual y lo "activamos" :
 
 ![img](https://i.sli.mg/ZYm4AY.png)
 
