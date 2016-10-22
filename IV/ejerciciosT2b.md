@@ -21,7 +21,6 @@ Ahora en este proyecto instalamos la ultima versión de Flask.
 ![img](https://i.sli.mg/JE7fT1.png)
 
 
-
 ## Ejercicio nº2.
 
 Para el desarrollo de la web voy a usar Flask para lo cual he seguido la estructura contenida en: [digitalocean](https://www.digitalocean.com/community/tutorials/how-to-structure-large-flask-applications)
