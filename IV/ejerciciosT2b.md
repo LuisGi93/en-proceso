@@ -5,12 +5,12 @@
 
 Vamos a instalar el entorno virtual de desarrollo para ello seguimos seguimos los pasos descritos en la [web de virtualenv](https:/virtualenv.pypa.io/en/latest/installation/):
 
-1. Instalamos virtualenv, para ello primero instalamos pip y después virtualenv:
+	1º. Instalamos virtualenv, para ello primero instalamos pip y después virtualenv:
 
 
 ![img](https://i.sli.mg/UuKx8j.png)
 
-2. Creamos el entorno virtual y lo "activamos" :
+	2º. Creamos el entorno virtual y lo "activamos" :
 
 ![img](https://i.sli.mg/ZYm4AY.png)
 
@@ -108,10 +108,4 @@ La salida de los test es la esperada:
 
 
 
-## Referencias:
-
-http://jj.github.io/IV/documentos/temas/Desarrollo_basado_en_pruebas
-http://docs.python-guide.org/en/latest/dev/virtualenvs/
-https://docs.djangoproject.com/en/1.10/intro/tutorial01/
-http://www.simononsoftware.com/virtualenv-tutorial-part-2/
 
