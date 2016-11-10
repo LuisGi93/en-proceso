@@ -155,7 +155,4 @@ o en https://semana5ivhyaloid-penicil.mybluemix.net/auth/todas_recetas/titutlode
 Decir que no he aún tengo pendiente como añadir a la secuencia de despliegue que no despliegue si no se pasan los test pero que hasta el momento no he conseguido comprender del todo como hacerlo ya que en hub.jazz.net no hay ni virtualenvs, ni nada para añadir travis ni forma de instalar la aplicación sobre hub.jazz.net antes de que la envie..
 
 
-Podemos observar todos los mensajes que tenemos registrados en nuestra base de datos que ha recibido el bot:
-
-![img](https://i.sli.mg/SVyRUg.png)
 
