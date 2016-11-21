@@ -45,7 +45,7 @@ Cuando instalé el container sin hacer nada de todo esto de las interfaces de re
 
 ## Ejercicio nº3.
 
-
+#### Contenedor basado en Debian.
 Para crear un container utilizando lxc utilizamos la orden lxc-create:
 ```
  lxc-create -t debian -n lxc_debian
@@ -66,4 +66,40 @@ E introducimos la contraseña que tendrá el usuario root en el contaner lxc_deb
 ![img](https://i.sli.mg/sZpXTj.png)<sup>Instalando lxc_debian.</sup>
 
 
+Como se puede observar en el ejercicio nº2 la instalación se produce de manera satisfactoria.
+
+#### Contenedor basado en Fedora.
+
+A continuación pasamos a instalar un contenedor basado en otra distribución para lo cual elegimos Fedora.  Tras unos cuantos intentos fallidos nos damos cuenta de que nos da un fallo diciendonos que no encuentra yum asi que lo instalamos usando apt-get y volvemos a lanzar la instalación:
+
+
+![img](https://i.sli.mg/MgxCdU.png)
+<sup>Instalando lxc_fedora.</sup>
+
+
+
+La instalación finaliza de manera satisfactoria pero a la hora de inicializar el contenedor fedora nos da un error relacionado con la interfaz de de networking asi que editamos el fichero de configuración para el container fedora en: ``` /var/lib/lxc/lxc_fedora/config ```
+
+poniendo como interfaz de red ninguna tras lo cual arranca satisfactoriamente.
+![img](https://i.sli.mg/QIdnN3.png)<sup>Editando fichero configuración container fedora e inicializando.</sup>
+
+
+El fallo posiblemente esté relacionado con que no utilizamos el modo normal para que se conecten los container a la red es decir el modo bridge con las interfaces puente sino que utilizamos Nat.
+Posiblemente si hiciéramos lo mismo que para el container de debian (vease ejercicio nº2) y configuraramos el container de fedora para que se conectara a nuestra red nat entonces muy posiblemente nuestro container fedora tendría libre acceso a internet.
+
+
+## Ejercicio nº4.
+
+Procedemos a instalar lxc-web utilizando el scrip que nos indican en la [web](http://lxc-webpanel.github.io/install.html) tras lo cual probamos abrimos el navegador web y nos conectamos al puerto 5000.
+
+![img](https://i.sli.mg/DE79ED.png)
+<sup>Tras instalar lxc-web accedemos a su interfaz web.</sup>
+
+
+Podemos observar como nos muestra los diferentes contenedores que tenemos instalados en el sistema. Tambiés podemos observar que no nos muestra el de fedora pero esto es porque la captura fué realizada mientras se instaba el fedora.
+
+A continuación pasamos a restringer los cpus que puede utilizar el container de fedora poniendo que solamente pueda utilzar los cores del 0 al 4 y restringiendo la memoria ram que puede utilizar a un tope de 888MB
+
+![img](https://i.sli.mg/5Vwj7d.png)
+<sup>Restringiendo recursos que puede utilizar  el container basado en fedora</sup>
 
