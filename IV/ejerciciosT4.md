@@ -103,3 +103,69 @@ A continuación pasamos a restringer los cpus que puede utilizar el container de
 ![img](https://i.sli.mg/5Vwj7d.png)
 <sup>Restringiendo recursos que puede utilizar  el container basado en fedora</sup>
 
+
+
+## Ejercicio nº 6.
+
+Instalamos docker siguiendo las instrucciones de la página web de docker.
+
+![img](https://i.sli.mg/wf3Uq0.png)
+<sup>Mostramos salida hello-world tras la instalación de docker y los comandos empleados para su instalación.</sup>
+
+
+## Ejercicio nº 7.
+
+Procedemos con la instalación de un contenedor docker de Ubuntu para ello no tenemos más que ejecutar la orden:
+```
+ docker pull ubuntu
+```
+![img](https://i.sli.mg/WoYo1u.png)
+<sup>Inslación de imagen Ubuntu y ejecución comando ls en ella.</sup>
+
+Tras lo cual procedemos a instalar una imagén que no pertenezca a la familia de ubuntu asi que instalamos CentOS.
+
+![img](https://i.sli.mg/zntolh.png)
+<sup>Inslación de imagen CentOS y ejecución comando ls en ella.</sup>
+
+Fácil e indoloro comparando  con lxc el proceso de instalación de la imagenes podemos decir que docker es considerablemente más rápido, limpio y no hace falta intalar cosas adicionales como por ejemplo tuvimos que instalar yum en nuestro ordenador para poder instalar la imagen de CentOS en lxc.
+
+También hay que destacar el tamaño de las imágenes la de lxc de CentOS ocupaba más de 500MB mientras que la de docker ocupa 200.  Hay que remarcar que se  tiene conectividad dentro del contenedor desde su creación. En total el proceso de instalación de las imagenes y la habilitación de internet hemos tardado 2 horas con docker que con lxc.Por tanto y a modo de resumen el uso de docker aparentemente require de la configuración de menos cosas y su uso es más amigable de cara al usuario. 
+
+
+
+## Ejercicio nº 8.
+
+
+Utilizamos el comando:
+
+```
+sudo docker run -i -t ubuntu /bin/bash
+```
+
+para iniciar una shell en el contenedor ubuntu desde ahí procedemos a ejecutar el comando:
+```
+useradd user-ubuntu
+```
+para crear al usuario user-ubuntu en el sistema le damos una contraseña utilizando el comando
+```
+passwd user-ubuntu
+```
+para poder loguearnos con él. Tras lo cual lo añadimos al grupo sudo, nos loguemos con el y procedemos a instalar nginx y curl.
+
+![img](https://i.sli.mg/umUsWQ.png)
+<sup>Mostramos historial para crear usuario y comprobamos la instalación correcta de Nginx</sup>
+
+
+## Ejercicio nº 9.
+
+Para poder hacer el commit de una imagen de ubuntu en primer lugar hace falta encontrar el id de dicho container para lo cual empleamos la orden:
+
+```
+docker -a
+```
+Que nos muestra todos los containers que hay junto con sus ids. Tras lo cual como queremos guardar una imagen original de ubuntu sin que le hayamos instalado el nginx seleccionamos la imagen que se ha generado con el comando ls que ejecutamos tras la instalación del container de Ubuntu:
+
+![img](https://i.sli.mg/n1PvkR.png)
+<sup>Mostramos todas las imágenes creadas de docker en nuestro sistema y hacemos commit sobre la de ubuntu resultado de ejecutar sobre ella el comando ls utilizando docker run.</sup>
+
+Como se puede observar en la imagenhemos clonado la imagen correcta ya que esta no tiene en su interior un servidor Nginx ejecutandose.
