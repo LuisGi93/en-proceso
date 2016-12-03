@@ -169,3 +169,59 @@ Que nos muestra todos los containers que hay junto con sus ids. Tras lo cual com
 <sup>Mostramos todas las imágenes creadas de docker en nuestro sistema y hacemos commit sobre la de ubuntu resultado de ejecutar sobre ella el comando ls utilizando docker run.</sup>
 
 Como se puede observar en la imagenhemos clonado la imagen correcta ya que esta no tiene en su interior un servidor Nginx ejecutandose.
+
+
+## Ejercicio nº10.
+
+Para poder construir una imagen docker necesitamos crear un archivo denominado Dockerfile:
+
+```
+FROM ubuntu:latest
+
+MAINTAINER Luis Gil Guijarro <luisgguijarro9@gmail.com>
+
+
+ARG TOKEN
+ARG TOKEN_TASTEKID
+ARG POSTGRES_DATABASE
+
+ENV TOKEN=$TOKEN
+ENV TOKEN_TASTEKID=$TOKEN_TASTEKID
+ENV POSTGRES_DATABASE=$POSTGRES_DATABASE
+
+
+RUN apt-get update
+RUN apt-get install -y git ruby ruby-dev build-essential libpq-dev
+
+RUN gem install bundler
+
+RUN git clone https://github.com/LuisGi93/proyectoIV2016-2017
+WORKDIR proyectoIV2016-2017
+RUN bundle install
+
+```
+<sup>Dockerfile del proyecto en github: [Dockerfile](https://github.com/LuisGi93/proyectoIV2016-2017/blob/master/Dockerfile)</sup>
+
+
+ y en el definir que sistema operativo queremos usar ```FROM ```, las variables de entorno que usa nuestra aplicación ```ENV```, instalar en el sistema operativo elegido los paquetes y gemas que utiliza nuestra aplicación ```RUN apt... ```,  clonar  el repositorio ```RUN git clone ...```,  definir el directorio de trabajo ```WORKDIR``` instalar dependendias ```RUN bundle install```.
+ 
+ Este Dockerfile lo ponemos en el directorio de nuestro proyecto y ejecutamos el comando:
+ 
+ ```
+docker build -f Dockerfile -t queveobot .
+ ```
+ 
+ En su momento se me olvidó tirar captura pero se puede ver en la [documentación del proyecto](https://github.com/LuisGi93/proyectoIV2016-2017/blob/hito2/README.md) (apartado 4) como se constrouye el  proyecto correctametne en dockerhub y se puede probar la imagen utilizando un:
+ 
+ ```
+docker pull luisgi93/proyectoiv2016-2017
+
+```
+
+
+
+Tras lo cual accedemos al contenedor utilizando la orden:
+
+```
+docker run -e "TOKEN=xxx" -e "TOKEN_TASTEKID=xxx" -e "POSTGRES_DATABASE=xxx"  -i -t luisgi93/proyectoiv2016-2017 /bin/bash
+```
