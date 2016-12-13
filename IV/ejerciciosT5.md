@@ -104,6 +104,7 @@ qemu-system-x86_64 -boot order=c -drive file=disco-lubuntu.qcow2 -m 1G
 
 ![img](https://i.sli.mg/MY6Dyo.png)
 <sup>Se puede observar el contenido del fichero de benchmarking asi como de la sálida que produce.</sup>
+
 El benchmark reporta el tiempo en espacio de usuario, el tiempo en modo kernel, la suma de los dos y finalmente el tiempo total que le ha llevado al benchmark ejecutarse. Tomamos como buena la suma de tiempo usuario+kernel que sin paravirtualización y utilizando Qemu en Lubuntu tarda:
 225s en ejecutarse el benchmark.
 
