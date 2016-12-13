@@ -69,7 +69,7 @@ A continuación arrancamos y seguimos los pasos habitulaes para instalar un sist
 Creamos un benchmark que en primer lugar crea un directorio si este no existe y en el crea 50 ficheros de texto con 10^5 líneas de texto llegando a ocupar cada fichero unos 2.5mb, creandose por tanto en total 250MB:
 
 
-```
+```ruby
 require 'benchmark'
 require 'fileutils'
 
