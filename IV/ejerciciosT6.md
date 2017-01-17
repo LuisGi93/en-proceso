@@ -215,3 +215,45 @@ Previamente a ejecutar el playbook ha sido necesario  copiar la clave  rsa_pub d
 
 
 ## Ejercicio nº4.
+
+
+
+Para crear una máquina virtual Debian usando Vagrant no hay más que irse a un directorio cualquiera y ejecutar:
+
+```
+vagrant init debian/jessie64;
+```
+Esto creará un Vagrantfile pudiendo a continuación ejecutar ```vagrant up ````lo cual dará lugar al inicio de la máquina virtual Debian.
+
+
+![img](https://ibin.co/39DsbFdbGbEb.png)
+
+
+## Ejercicio nº5.
+
+Seguimos el ejemplo del Vagrantfile que se crea al hacer vagrant up en el ejercicio anterior y lo dejamos asi:
+
+ ```
+ VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = "debian/jessie64"
+
+  config.vm.provision "shell", path: "nginx.sh"
+end
+
+ ```
+ 
+ De tal forma que cuando hagamos vagrant provision vagrant ejecutará en la máquina debian las instrucciones shell contenidas en nnginx.sh. El contenido de nginx.sh para que instale nginx es el siguiente:
+ 
+ ```
+    apt-get update
+     apt-get install -y nginx
+
+```
+Tras lo cual no queda más que ejecutar vagrant provision y ver si efectivamente instala nginx.
+
+![img](https://ibin.co/39DsT8LHPONp.png)
+
+
+ 
