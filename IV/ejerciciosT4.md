@@ -63,7 +63,8 @@ lxc-attach -n lxc_debian passwd
 E introducimos la contraseña que tendrá el usuario root en el contaner lxc_debian pudiendo asi loguearnos en el container como root.
 
 
-![img](http://i1339.photobucket.com/albums/o720/rand9882/2017-01-18_195822_zps1rai6uks.png)<sup>Instalando lxc_debian.</sup>
+![img](http://i1339.photobucket.com/albums/o720/rand9882/2017-01-18_195822_zps1rai6uks.png)
+<sup>Instalando lxc_debian.</sup>
 
 
 Como se puede observar en el ejercicio nº2 la instalación se produce de manera satisfactoria.
