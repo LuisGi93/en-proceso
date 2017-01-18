@@ -166,7 +166,7 @@ docker ps -a
 ```
 Que nos muestra todos los containers que hay junto con sus ids. Tras lo cual como queremos guardar una imagen original de ubuntu sin que le hayamos instalado el nginx seleccionamos la imagen que se ha generado con el comando ls que ejecutamos tras la instalación del container de Ubuntu:
 
-![img]http://i1339.photobucket.com/albums/o720/rand9882/doc10_zps2huqao1m.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/doc10_zps2huqao1m.png)
 <sup>Mostramos todas las imágenes creadas de docker en nuestro sistema y hacemos commit sobre la de ubuntu resultado de ejecutar sobre ella el comando ls utilizando docker run.</sup>
 
 Como se puede observar en la imagenhemos clonado la imagen correcta ya que esta no tiene en su interior un servidor Nginx ejecutandose.
