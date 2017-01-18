@@ -1,5 +1,6 @@
 #Ejercicios. Tema 1.
 
+Debido a la desaparación de la compañia en la cual alojaba todas las capturas 4 horas después de realizar el último ejercicio he tenido que resubir todas las capturas de la asignatura a otro servidor de hosting de fotos. Lamentable no tenía backup de las de este tema :(
 	
 ## Ejercicio nº1.
 
