@@ -5,7 +5,7 @@
 
 Instalamos kvm tal cual  se nos indica en el enlace del ejercicio.
 
-![img](https://i.sli.mg/0zFvQx.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/2016-12-08-13-51-50_scrot_zps3v7wga25.png)
 
 Instalamos los paqueters y añadimos a nuestro usuario al grupo de kvm y al libvirt.
 
@@ -29,7 +29,7 @@ qemu-system-x86_64 -hda ~/Downloads/disco-sli.qcow2 -cdrom path_del_iso_a_instal
 
 Esta orden indica a qemu un disco y un cd para que cuando se inicie los utilize, en concreto presupongo que si le indicamos esta orden tal cual intenrá arrancar primero del cd y después del disco siendo visibles el disco y el cd entre ellos. Tras el arranque de qemu  instalamos el SO contenido en el .iso. En mi caso he instalado DML:
 
-![img](https://i.sli.mg/uiph6I.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/2016-12-12-11-29-42_scrot_zpscgd8wnh3.png)
 
 Una vez completada la instlación accedemos al sistema para comprobar si se ha instalado correctamente para ello arrancamos con la orden:
 
@@ -39,28 +39,28 @@ qemu-system-x86_64 -boot order=c -drive file=disco-sli.qcow2 -m 1G
 ```
 que básicamente le indica a quemu que se quiere arrancar desde ese disco:
 
-![img](https://i.sli.mg/ilpcux.png)
-![img](https://i.sli.mg/LBYOaa.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/2016-12-12-11-31-45_scrot_zpszoiale4v.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/2016-12-12-11-36-32_scrot_zpsso3n6rpq.png)
 
 ### Máquinas virtuales con Virtualbox.
 A continuación repetimos el proceso de crear maquinas virtuales utilizando virtualbox. En primer lugar abrimos virtualbox y seleccionamos la pestaña que pone "New"
 
 
-![img](https://i.sli.mg/3jiwd8.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/2016-12-08-14-30-07_scrot_zpsvjilyfrj.png)
 
 
-Le damos nombre a nuestra máquina virtual y a continuación seleccionamso en un slider el tope  maximo de RAM que queremos que consuma y pasamos a crear el disco en el cual se va a instalr el sistema:
+Le damos nombre a nuestra máquina virtual y a continuación seleccionamso en un slider el tope  maximo de RAM que queremos que consuma y pasamos a crear el disco en el cual se va a instalar el sistema:
 
 
-![img](https://i.sli.mg/B8T37s.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/2016-12-08-14-34-31_scrot_zpsr6rflobn.png)
 
 Seleccionamos el tamaño que deseamos que tenga el disco y le damos un nombre para identificarlo. A conitnuación ya se habrá creado una máquina virtual pero al arrancar la máquina como el disco recien creado no tiene nada instalado no sabrá como arancar. Asi que nos vamos al menu de virtualbox selccionamos settings sobre nuestra máquina virtual reciente creada y nos vamos a la pestaña denominada "storage" alli le añadimos la .iso que nos hemos descargado en mi cao el .iso de GALPon Minimo, Todo tiene que quedar asi:
 
-![img](https://i.sli.mg/Krd6zV.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/2016-12-08-14-49-24_scrot_zpsdsom1ggo.png)
 A continuación arrancamos y seguimos los pasos habitulaes para instalar un sistema operativo tipo Debian.
 
 
-![img](https://i.sli.mg/uTFeBI.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/2016-12-08-14-54-10_scrot_zpsrtdekowe.png)
 
 
 
@@ -102,18 +102,18 @@ En primer lugar lo utililizamos sobre una máquina Lubuntu corriendo sobre Qemu 
 qemu-system-x86_64 -boot order=c -drive file=disco-lubuntu.qcow2 -m 1G
 ```
 
-![img](https://i.sli.mg/MY6Dyo.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/2016-12-13-06-32-06_scrot_zps1cgwbibo.png)
 <sup>Se puede observar el contenido del fichero de benchmarking asi como de la sálida que produce.</sup>
 
 El benchmark reporta el tiempo en espacio de usuario, el tiempo en modo kernel, la suma de los dos y finalmente el tiempo total que le ha llevado al benchmark ejecutarse. Tomamos como buena la suma de tiempo usuario+kernel que sin paravirtualización y utilizando Qemu en Lubuntu tarda:
 225s en ejecutarse el benchmark.
 
-![img](https://i.sli.mg/FIjZaj.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/2016-12-13-06-34-25_scrot_zpskwukgo4w.png)
 <sup>Sálida un poco más detallada en la que se puede ver el espacio que ocupta el directorio creado, que ficheros contiene este y el contenido de estos ficheros</sup>
 
 A continuación ejecutamos el benchmark en la misma máquina virtual Lubuntu pero ahora ejecutamos Qemu indicandole que se use paravirtualización:
 
-![img](https://i.sli.mg/Oj1MLD.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/2016-12-13-07-21-56_scrot_zpsivkrsmoa.png)
 
 Ahora el benchmark tarda unos 235s es decir 10 segundos más
 
@@ -124,12 +124,12 @@ Viendo esta salida se puede decir que en principio parece poco relevante si se u
 
 Nos descargamos e instalamos Lubuntu distribución de linux con LXCE como entorno de escritorio. Le ponemos el techo de RAM a 512MB:
 
-![img](https://i.sli.mg/kkCbSs.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/2016-12-09-04-19-52_scrot_zpspzjytb7t.png)
 
 Seguimos los pasos típicos de instalación y una vez que está instalada le tenemos que modificar la configuración de red que utiliza ya que por defecto no hay conectividad maquina guest-host y viceversa. 
 En mi ordenador en particular siempre he tenido problemas con la configuración de red para las máquinas virtuales asi que para poder instalar lo necesario para vnc y ssh temporalmente se la pongo como bridged (lo cual significa que la máquina virtual aparece en la red wifi como si fuera otro ordenador más de la casa) si no se la pusiera bridge tendría que ponersela a NAT o similar y después poner a mano en los ficheros de configuración una ip estática, máscara, red...:
 
-![img](https://i.sli.mg/TuwGyb.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/2016-12-11-12-46-40_scrot_zpsrmdkrbmh.png)
 
 Una vez hecho esto compruebo su ip con ifconfig, instalo openssh-server utilizando el comando:
 ```
@@ -156,7 +156,7 @@ ssh usuario_remoto@ip_remota
 
 ```
 
-![img](https://i.sli.mg/CVFse6.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/2016-12-11-13-30-10_scroto_zpsr7dopdeo.png)
 
 
 Para utilizar VNC necesitamos en el host un cliente VNC y en el guest un servidor VNC, como cliente VNC he utilizado vinagre:
@@ -174,7 +174,7 @@ sudo apt-get install x11vnc
 
 a continuación ejecutamos x11vnc en nuestra máquina virtual Lubuntu y en el host ejecutamos vinagre, introduciendo la IP de la máquina Lubuntu:
 
-![img](https://i.sli.mg/sKH1GL.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/2016-12-11-13-50-12_scrot_zpsw6h7h046.png)
 
 Al principio pensé que el acceso directo a ver el escritorio remoto de la máquina virtual sin pedir contraseña ni nada se debía a que teníamos permiso para loguearnos vía public key utilizando ssh en la máquina Lubuntu. Tras comprobar en otro ordenador diferente que podía conectarme a la máquina virtual Lubuntu sin tener la clave pública autorizada para ese ordenador ni nada solo necesitando la IP de la máquina Lubuntu vi que la sesión vnc de la máquina virtual Lubuntu estaba "abierta al mundo" (si tuviera los puertos del router abiertos claro).
  Posiblmente haya un mecanismo para al igual que con ssh solo deje pasar clientes ssh con una clave pública autorizada en VNC tiene que haber algún mecanismo similar.
@@ -183,10 +183,10 @@ Al principio pensé que el acceso directo a ver el escritorio remoto de la máqu
 
 Nos descargamos el .iso de la página oficial de Linux Mint y creamos con Virtualbox tal cual hemos hecho en el segundo ejercicio para lubuntu, es decir le damos nombre, seleccionamos el tope de RAM queremos que consuma, el tamaño de disco...
 
-![img](https://i.sli.mg/GPjWVk.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/2016-12-11-11-52-32_scrot_zpsszqkccif.png)
 <sup>Tras finalizar la instalación</sup>
 Seguimos los pasos que nos indican en la instalción y reiniciamos.
 
 
-![img](https://i.sli.mg/PzArPG.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/2016-12-11-12-02-26_scrot_zps4npin62x.png)
 

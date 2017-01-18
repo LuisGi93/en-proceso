@@ -11,7 +11,7 @@ Instalamos por la via rápida chef:
 curl -L https://www.opscode.com/chef/install.sh | bash
 ```
 
-![img](https://i.sli.mg/vClNry.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/2016-12-30-06-53-04_scrot_zpsyh1vc1kf.png)
 
 ## Ejercicio nº2.
 
@@ -46,7 +46,7 @@ end
 
 Esta receta instala los paquetes: git, ruby, ruby-dev, build-essential, pibpq-dev.., la gema bundler para a continuación clonar el repositorio del proyecto utilizando el comando git clone y para acabar instala todas las dependencias del proyecto utilizando el comando bundle install.
 
-![img](https://i.sli.mg/AlHMbx.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/2016-12-30-09-56-17_scrot_zpslonwke3d.png)
 
 
 ## Ejercicio nº3.
@@ -213,6 +213,9 @@ Por último comentar la opción "args" con la que defimos características para 
 
 Previamente a ejecutar el playbook ha sido necesario  copiar la clave  rsa_pub de la máquina maestro a ~/.ssh/authorized_keys en las esclavos.
 
+![img](http://i1339.photobucket.com/albums/o720/rand9882/2017-01-03-11-14-06_scrot_zpswot8kud2.png)
+
+![img](http://i1339.photobucket.com/albums/o720/rand9882/2017-01-03-11-14-55_scrot_zps0srjb5sq.png)
 
 ## Ejercicio nº4.
 

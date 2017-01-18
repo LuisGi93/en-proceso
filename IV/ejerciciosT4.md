@@ -5,9 +5,9 @@
 
 Para la inslación de lxc utilizo el paquete contenido de lxc contenido por defecto en mi máquina virtual de Debian-Jessie. Tras la instalación procedo a hacer un lxc-checkconfig cruzando los dedos para que no haya nada en rojo:
 
-![img](https://i.sli.mg/q8hk84.png)<sup>Instalando lxc.</sup>
+![img](https://ibin.co/39KstFPqq0QB.png)<sup>Instalando lxc.</sup>
 
-![img](https://i.sli.mg/Yde9hF.png)<sup>Salida checkconfig.</sup>
+![img](https://ibin.co/39KszBD0a5tn.png)<sup>Salida checkconfig.</sup>
 
 
 El proceso de creación de los container lo reservamos para el ejercicio 3.
@@ -35,11 +35,11 @@ iface lxc-bridge-nat inet static
 ```
 
 Tras lo cual reinicio el container y compruebo si tengo conectividad a internet en el container para lo cual ejecuto apt-get update porque no tiene ni ping instalado:
-![img](https://i.sli.mg/oXpVVs.png)
+![img](https://ibin.co/39KuopLUb3Pc.png)
 
 
 En el host puedo comprobar que se ha añadido una interfaz lxc-bridge-land y con la orden lxc-ls compruebo la ip que tiene el container:
-![img](https://i.sli.mg/jgIWV2.png)
+![img](https://ibin.co/39KuaStqh2jY.png)
 
 Cuando instalé el container sin hacer nada de todo esto de las interfaces de red al hacer ifconfig -a en el container solo tenía la interfaz lo y ahora tiene 2 nuevas interfaces una eth0 con la ip del host y otra con lxc-bridge-nat con lo cual uno se pregunta cual es la que usa. Viendo la salida de lxc-ls en el host pienso que obtiene la ip de eth0 hablando con el host a traves de lxc-bridge-nat  y pasa a contactar con internet a traves de eth0.
 
@@ -63,7 +63,7 @@ lxc-attach -n lxc_debian passwd
 E introducimos la contraseña que tendrá el usuario root en el contaner lxc_debian pudiendo asi loguearnos en el container como root.
 
 
-![img](https://i.sli.mg/sZpXTj.png)<sup>Instalando lxc_debian.</sup>
+![img](http://i1339.photobucket.com/albums/o720/rand9882/2017-01-18_195822_zps1rai6uks.png)<sup>Instalando lxc_debian.</sup>
 
 
 Como se puede observar en el ejercicio nº2 la instalación se produce de manera satisfactoria.
@@ -73,7 +73,7 @@ Como se puede observar en el ejercicio nº2 la instalación se produce de manera
 A continuación pasamos a instalar un contenedor basado en otra distribución para lo cual elegimos Fedora.  Tras unos cuantos intentos fallidos nos damos cuenta de que nos da un fallo diciendonos que no encuentra yum asi que lo instalamos usando apt-get y volvemos a lanzar la instalación:
 
 
-![img](https://i.sli.mg/MgxCdU.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/lxc8_zpsv08eqpeo.png)
 <sup>Instalando lxc_fedora.</sup>
 
 
@@ -81,7 +81,7 @@ A continuación pasamos a instalar un contenedor basado en otra distribución pa
 La instalación finaliza de manera satisfactoria pero a la hora de inicializar el contenedor fedora nos da un error relacionado con la interfaz de de networking asi que editamos el fichero de configuración para el container fedora en: ``` /var/lib/lxc/lxc_fedora/config ```
 
 poniendo como interfaz de red ninguna tras lo cual arranca satisfactoriamente.
-![img](https://i.sli.mg/QIdnN3.png)<sup>Editando fichero configuración container fedora e inicializando.</sup>
+![img](http://i1339.photobucket.com/albums/o720/rand9882/lxc12_zpsel3olfup.png)<sup>Editando fichero configuración container fedora e inicializando.</sup>
 
 
 El fallo posiblemente esté relacionado con que no utilizamos el modo normal para que se conecten los container a la red es decir el modo bridge con las interfaces puente sino que utilizamos Nat.
@@ -92,7 +92,7 @@ Posiblemente si hiciéramos lo mismo que para el container de debian (vease ejer
 
 Procedemos a instalar lxc-web utilizando el scrip que nos indican en la [web](http://lxc-webpanel.github.io/install.html) tras lo cual probamos abrimos el navegador web y nos conectamos al puerto 5000.
 
-![img](https://i.sli.mg/DE79ED.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/lxc9_zpsqall8twr.png)
 <sup>Tras instalar lxc-web accedemos a su interfaz web.</sup>
 
 
@@ -100,7 +100,7 @@ Podemos observar como nos muestra los diferentes contenedores que tenemos instal
 
 A continuación pasamos a restringer los cpus que puede utilizar el container de fedora poniendo que solamente pueda utilzar los cores del 0 al 4 y restringiendo la memoria ram que puede utilizar a un tope de 888MB
 
-![img](https://i.sli.mg/5Vwj7d.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/lxc14_zpsp9ujswhr.png)
 <sup>Restringiendo recursos que puede utilizar  el container basado en fedora</sup>
 
 
@@ -109,7 +109,7 @@ A continuación pasamos a restringer los cpus que puede utilizar el container de
 
 Instalamos docker siguiendo las instrucciones de la página web de docker.
 
-![img](https://i.sli.mg/wf3Uq0.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/doc1_zpsplrmnd2z.png)
 <sup>Mostramos salida hello-world tras la instalación de docker y los comandos empleados para su instalación.</sup>
 
 
@@ -119,12 +119,12 @@ Procedemos con la instalación de un contenedor docker de Ubuntu para ello no te
 ```
  docker pull ubuntu
 ```
-![img](https://i.sli.mg/WoYo1u.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/doc2_zpszxyptn79.png)
 <sup>Inslación de imagen Ubuntu y ejecución comando ls en ella.</sup>
 
 Tras lo cual procedemos a instalar una imagén que no pertenezca a la familia de ubuntu asi que instalamos CentOS.
 
-![img](https://i.sli.mg/zntolh.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/doc6_zpstkohe2ew.png)
 <sup>Inslación de imagen CentOS y ejecución comando ls en ella.</sup>
 
 Fácil e indoloro comparando  con lxc el proceso de instalación de la imagenes podemos decir que docker es considerablemente más rápido, limpio y no hace falta intalar cosas adicionales como por ejemplo tuvimos que instalar yum en nuestro ordenador para poder instalar la imagen de CentOS en lxc.
@@ -152,7 +152,7 @@ passwd user-ubuntu
 ```
 para poder loguearnos con él. Tras lo cual lo añadimos al grupo sudo, nos loguemos con el y procedemos a instalar nginx y curl.
 
-![img](https://i.sli.mg/umUsWQ.png)
+![img](http://i1339.photobucket.com/albums/o720/rand9882/doc9_zpsrdqihdpj.png)
 <sup>Mostramos historial para crear usuario y comprobamos la instalación correcta de Nginx</sup>
 
 
@@ -161,11 +161,11 @@ para poder loguearnos con él. Tras lo cual lo añadimos al grupo sudo, nos logu
 Para poder hacer el commit de una imagen de ubuntu en primer lugar hace falta encontrar el id de dicho container para lo cual empleamos la orden:
 
 ```
-docker -a
+docker ps -a
 ```
 Que nos muestra todos los containers que hay junto con sus ids. Tras lo cual como queremos guardar una imagen original de ubuntu sin que le hayamos instalado el nginx seleccionamos la imagen que se ha generado con el comando ls que ejecutamos tras la instalación del container de Ubuntu:
 
-![img](https://i.sli.mg/n1PvkR.png)
+![img]http://i1339.photobucket.com/albums/o720/rand9882/doc10_zps2huqao1m.png)
 <sup>Mostramos todas las imágenes creadas de docker en nuestro sistema y hacemos commit sobre la de ubuntu resultado de ejecutar sobre ella el comando ls utilizando docker run.</sup>
 
 Como se puede observar en la imagenhemos clonado la imagen correcta ya que esta no tiene en su interior un servidor Nginx ejecutandose.
